@@ -58,66 +58,66 @@ if __name__ == "__main__":
     print(first_non_repeating_char(arg))
 
 
-AI Solution 1 (Based on mine) Difference because mine was focusing on subsequent character while 
-non-repeating meant no similar character in the whole string.
-#!/usr/bin/env python3
-"""
-The function takes in a string and returns the first non-repeating character.
-"""
+# AI Solution 1 (Based on mine) Difference because mine was focusing on subsequent character while 
+# non-repeating meant no similar character in the whole string.
+# #!/usr/bin/env python3
+# """
+# The function takes in a string and returns the first non-repeating character.
+# """
 
-from typing import Optional
-from collections import OrderedDict
-from sys import argv
-
-
-def first_non_repeating_char(s: str) -> Optional[str]:
-    """
-    Takes in a string and returns the first non-repeating character if there else None.
-    Args:
-        -> s (str): input string
-    Return:
-        -> str: The first non-repeating character or None if otherwise
-    """
-    if not s:
-        return None  # Empty string
-
-    # Use OrderedDict to preserve order while counting occurrences
-    freq = OrderedDict()
-
-    for char in s:
-        freq[char] = freq.get(char, 0) + 1
-
-    # Find first character with frequency 1
-    for char, count in freq.items():
-        if count == 1:
-            return char
-
-    return None
+# from typing import Optional
+# from collections import OrderedDict
+# from sys import argv
 
 
-if __name__ == "__main__":
-    try:
-        arg = argv[1]
-    except IndexError:
-        arg = ""
+# def first_non_repeating_char(s: str) -> Optional[str]:
+#     """
+#     Takes in a string and returns the first non-repeating character if there else None.
+#     Args:
+#         -> s (str): input string
+#     Return:
+#         -> str: The first non-repeating character or None if otherwise
+#     """
+#     if not s:
+#         return None  # Empty string
 
-    print(first_non_repeating_char(arg))
+#     # Use OrderedDict to preserve order while counting occurrences
+#     freq = OrderedDict()
+
+#     for char in s:
+#         freq[char] = freq.get(char, 0) + 1
+
+#     # Find first character with frequency 1
+#     for char, count in freq.items():
+#         if count == 1:
+#             return char
+
+#     return None
 
 
-AI Solution 2
-from typing import Optional
-from collections import Counter
+# if __name__ == "__main__":
+#     try:
+#         arg = argv[1]
+#     except IndexError:
+#         arg = ""
 
-def first_non_repeating_char(s: str) -> Optional[str]:
-    """
-    Returns the first non-repeating character in a string.
-    """
-    if not s:
-        return None
+#     print(first_non_repeating_char(arg))
 
-    freq = Counter(s)
 
-    for char in s:
-        if freq[char] == 1:
-            return char
-    return None
+# AI Solution 2
+# from typing import Optional
+# from collections import Counter
+
+# def first_non_repeating_char(s: str) -> Optional[str]:
+#     """
+#     Returns the first non-repeating character in a string.
+#     """
+#     if not s:
+#         return None
+
+#     freq = Counter(s)
+
+#     for char in s:
+#         if freq[char] == 1:
+#             return char
+#     return None
