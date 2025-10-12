@@ -35,7 +35,7 @@ def second_largest(numbers: list) -> int:
     return second
 
 
-def second_largest_two(numbers: list) -> int:
+def second_largest_two(numbers: list[int]) -> int:
     if not isinstance(numbers, list):
         raise ValueError("The argument passed must be a list.")
 
