@@ -49,48 +49,48 @@ if __name__ == "__main__":
 
 
 # AI Approach 1
-# def count_vowels_and_consonants(s: str) -> dict:
-#     if not isinstance(s, str):
-#         raise TypeError("Input must be a string")
+def count_vowels_and_consonants(s: str) -> dict:
+    if not isinstance(s, str):
+        raise TypeError("Input must be a string")
 
-#     vowels = {"a", "e", "i", "o", "u"}
-#     s = s.lower()
+    vowels = {"a", "e", "i", "o", "u"}
+    s = s.lower()
 
-#     vowel_count = 0
-#     consonant_count = 0
+    vowel_count = 0
+    consonant_count = 0
 
-#     for ch in s:
-#         if ch.isalpha() and ch.isascii():  # ensures only English letters
-#             if ch in vowels:
-#                 vowel_count += 1
-#             else:
-#                 consonant_count += 1
+    for ch in s:
+        if ch.isalpha() and ch.isascii():  # ensures only English letters
+            if ch in vowels:
+                vowel_count += 1
+            else:
+                consonant_count += 1
 
-#     return {"Vowels": vowel_count, "Consonants": consonant_count}
+    return {"Vowels": vowel_count, "Consonants": consonant_count}
 
 
 # AI Approach 2
-# def count_vowels_and_consonants(s: str) -> dict:
-#     s = s.lower()
-#     vowels = {"a", "e", "i", "o", "u"}
+def count_vowels_and_consonants(s: str) -> dict:
+    s = s.lower()
+    vowels = {"a", "e", "i", "o", "u"}
 
-#     letters = [ch for ch in s if ch.isalpha() and ch.isascii()]
-#     vowel_count = sum(1 for ch in letters if ch in vowels)
-#     consonant_count = len(letters) - vowel_count
+    letters = [ch for ch in s if ch.isalpha() and ch.isascii()]
+    vowel_count = sum(1 for ch in letters if ch in vowels)
+    consonant_count = len(letters) - vowel_count
 
-#     return {"Vowels": vowel_count, "Consonants": consonant_count}
+    return {"Vowels": vowel_count, "Consonants": consonant_count}
 
 
 # AI Approach 3 (Using Regular Expression/Regex)
 
-# import re
+import re
 
-# def count_vowels_and_consonants(s: str) -> dict:
-#     s = s.lower()
-#     vowels = "aeiou"
+def count_vowels_and_consonants(s: str) -> dict:
+    s = s.lower()
+    vowels = "aeiou"
 
-#     letters = re.findall(r"[a-z]", s)
-#     vowel_count = sum(1 for ch in letters if ch in vowels)
-#     consonant_count = len(letters) - vowel_count
+    letters = re.findall(r"[a-z]", s)
+    vowel_count = sum(1 for ch in letters if ch in vowels)
+    consonant_count = len(letters) - vowel_count
 
-#     return {"Vowels": vowel_count, "Consonants": consonant_count}
+    return {"Vowels": vowel_count, "Consonants": consonant_count}

@@ -35,14 +35,14 @@ if __name__ == "__main__":
 
 
 # AI Approach (Counter approach wokrs in pyton 3.7+ and might might cause error in lower versions so below is the best approach)
-# def remove_duplicates(lst: list) -> list:
-#     if not isinstance(lst, list):
-#         raise ValueError("The argument must be a list.")
+def remove_duplicates(lst: list) -> list:
+    if not isinstance(lst, list):
+        raise ValueError("The argument must be a list.")
 
-#     seen = set()
-#     unique = []
-#     for item in lst:
-#         if item not in seen:
-#             seen.add(item)
-#             unique.append(item)
-#     return unique
+    seen = set()
+    unique = []
+    for item in lst:
+        if item not in seen:
+            seen.add(item)
+            unique.append(item)
+    return unique
